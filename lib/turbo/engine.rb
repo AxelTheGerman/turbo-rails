@@ -26,6 +26,9 @@ module Turbo
     #   end
     #
     initializer "turbo.no_action_cable", before: :set_eager_load_paths do
+      puts "\n\n\nHELLO\n\n\n"
+      puts "\n\n\nHELLO ActionCable defined? #{defined?(ActionCable) ? 'YES' : 'NO'}\n\n\n"
+      puts "\n\n\nHELLO\n\n\n"
       unless defined?(ActionCable)
         if Rails.autoloaders.zeitwerk_enabled?
           Rails.autoloaders.once.do_not_eager_load("#{root}/app/channels")
